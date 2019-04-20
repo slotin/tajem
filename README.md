@@ -12,7 +12,7 @@ WP folders and files are in the .gitignore file.
 For the ease of use, the installed plugins will be stored in the repository.
 
 ## Project Setup
-development domain: `example.loc`
+development domain: `tajem.loc`
 
-prefix for tables: `wp_`
+prefix for tables: `tj_`
 

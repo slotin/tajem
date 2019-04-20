@@ -11,12 +11,71 @@ select {
   font-family: inherit;
   width: 100%;
   max-width: 100%;
-  background: none;
   outline: 0 none;
   border: 1px solid #dedede;
-  padding: 15px;
-  color: #333;
+  padding: 14px 21px;
+  color: $grey-color;
   background-color: #fff;
-  margin-top: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 21px;
+  letter-spacing: 0.7px;
+  opacity: 1;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none;
+}
+
+input.wpcf7-not-valid {
+  border-color: red;
+}
+
+.contact .wpcf7-not-valid-tip {
+  display: none;
+}
+
+div.wpcf7-response-output {
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+}
+
+.subscribe-form {
+  display: flex;
+
+  input[type='email'] {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.7px;
+    color: $white;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-right: 10px;
+
+    &::placeholder {
+      opacity: 0.75;
+      color: $white;
+    }
+  }
+
+  input[type='submit'] {
+    background: $white;
+    opacity: 0.5;
+    width: 70px;
+    cursor: pointer;
+    border: 1px solid $white;
+    outline: none;
+    transition: 0.3s;
+    background: url('../images/telegram-icon.png') $white 50% 50% no-repeat;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

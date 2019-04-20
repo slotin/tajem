@@ -1,4 +1,139 @@
 // Footer
 .page-footer {
 	position: relative;
+	z-index: 1;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	color: $white;
+
+	.row {
+		display: flex;
+
+		&--navigation {
+			margin-top: 36px;
+			justify-content: space-between;
+
+			.copyright {
+				letter-spacing: 0.35px;
+			}
+		}
+	}
+
+	.col {
+		width: 33%;
+		box-sizing: border-box;
+
+		&:nth-child(1) {
+			padding-right: 15px;
+		}
+
+		&:nth-child(2) {
+			padding-right: 15px;
+			padding-left: 5px;
+		}
+		&:nth-child(3) {
+			padding-left: 28px;
+		}
+	}
+
+	.text-block {
+		margin-top: 21px;
+		letter-spacing: 0.35px;
+		line-height: 26px;
+		font-weight: 300;
+	}
+
+	&--title {
+		letter-spacing: 0.75px;
+		font-size: 15px;
+		line-height: 26px;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: block;
+		margin-top: 12px;
+		margin-bottom: 28px;
+	}
+
+	.icon {
+		position: relative;
+		padding-left: 34px;
+		display: block;
+		letter-spacing: 0.35px;
+		line-height: 26px;
+		font-weight: 300;
+		width: 100%;
+		color: $white;
+		margin-bottom: 12px;
+		transition: 0.3s;
+
+		&:before {
+			font-weight: 700;
+			position: absolute;
+			left: 5px;
+			font-size: 18px;
+		}
+	}
+
+	a.icon:hover {
+		color: $main-color;
+	}
+
+	.footer-nav {
+		&--list {
+			display: flex;
+			padding-left: 0;
+			list-style: none;
+
+			.menu-item {
+				margin-right: 32px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+
+			a {
+				color: $white;
+				letter-spacing: 0.35px;
+				font-size: 14px;
+				text-transform: uppercase;
+				transition: 0.3s;
+
+				&:hover {
+					color: $main-color;
+				}
+			}
+		}
+	}
+
+	.socials-buttons {
+		display: flex;
+		align-items: center;
+		margin-top: 25px;
+
+		.icon {
+			padding-left: 0;
+			margin-right: 8px;
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			border: 1px solid $white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				border-color: $main-color;
+			}
+
+			&:before {
+				font-weight: 400;
+				position: relative;
+				left: 0;
+			}
+		}
+	}
 }

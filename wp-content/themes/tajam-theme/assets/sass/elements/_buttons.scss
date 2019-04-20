@@ -14,10 +14,18 @@
   text-transform: uppercase;
   transition: 0.3s;
   line-height: 1;
+  cursor: pointer;
 
   &:hover {
     color: $white;
     background-color: $main-color;
+  }
 
+  &--on-dark {
+    &:hover {
+      background-color: $white;
+      color: $main-color;
+      border-color: $white;
+    }
   }
 }
