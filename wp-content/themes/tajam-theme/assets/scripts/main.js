@@ -19,7 +19,7 @@
         body = $('body');
 
     // remove preloader when window is loaded
-    $(window).load(function() {
+    $(window).load(function () {
         $('#preloader').remove();
     });
 
@@ -38,7 +38,7 @@
     });
 
     // slider in hero section
-    if($('.hero-section--slider').length > 0 ) {
+    if ($('.hero-section--slider').length > 0) {
         $('.hero-section--slider').slick({
             dots: true,
             arrows: false,
@@ -67,12 +67,7 @@
         // Get container scroll position
         var fromTop = $(this).scrollTop() + yourHeader;
 
-        var $offTop;
-        if (window.innerWidth > 991) {
-            $offTop = 70;
-        } else {
-            $offTop = 10;
-        }
+        var $offTop = 80;
         // Get id of current scroll item
         var cur = scrollItems.map(function () {
             if ($(this).offset().top < fromTop + $offTop)
@@ -118,7 +113,7 @@
         centerMode: true,
         focusOnSelect: true,
         variableWidth: true,
-        mobileFirst:true,
+        mobileFirst: true,
         prevArrow: '<i class="nav-arrow fas fa-chevron-left"></i>',
         nextArrow: '<i class="nav-arrow fas fa-chevron-right"></i>',
         responsive: [
@@ -137,18 +132,31 @@
         ]
     });
 
-    menuMobile.on('click', function(){
+    // Burger menu
+    menuMobile.on('click', function () {
         toglerMenu();
     });
 
-     function toglerMenu(){
+    function toglerMenu() {
         $('.main-nav').toggleClass('open-menu');
         $(this).toggleClass('open-menu');
-        body.toggleClass('open-menu');
+        body.toggleClass('no-scroll');
     }
 
     body.on('click', '.main-nav.open-menu a', function () {
         toglerMenu();
     });
+
+    // play video handler
+    $('.js-play-video').on('click', function () {
+        $('.popup').toggleClass('open-popup');
+        body.toggleClass('open-modal');
+        playVideo();
+    });
+    $('.overlay').on('click', function () {
+        $('.popup').toggleClass('open-popup');
+        body.toggleClass('open-modal');
+        stopVideo();
+    })
 
 })(jQuery);

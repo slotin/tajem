@@ -52,10 +52,76 @@
         <?php if (get_field('background_our_video_section')) : ?>
             style="background-image: url('<?= get_field('background_our_video_section'); ?>');"
         <?php endif; ?>>
-        <i class="fa fa-play"></i>
+
+        <button class="js-play-video">
+            <i class="fa fa-play"></i>
+        </button>
+
         <?php if (get_field('our_story_video_section_title')): ?>
             <span class="our-video--title"><?= get_field('our_story_video_section_title'); ?></span>
         <?php endif; ?>
+
+        <div class="popup">
+            <div class="overlay"></div>
+            <div class="video-container">
+                <div id="player"></div>
+
+                <?php if (get_field('youtube_link')):
+                    $fullLink = get_field('youtube_link');
+                    $youtubeLink = explode("https://www.youtube.com/watch?v=", $fullLink);
+
+                    ?>
+                    <script>
+                        // 2. This code loads the IFrame Player API code asynchronously.
+                        var tag = document.createElement('script');
+
+                        tag.src = "https://www.youtube.com/iframe_api";
+                        var firstScriptTag = document.getElementsByTagName('script')[0];
+                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                        // 3. This function creates an <iframe> (and YouTube player)
+                        //    after the API code downloads.
+                        var player;
+
+                        function onYouTubeIframeAPIReady() {
+                            player = new YT.Player('player', {
+                                height: '100%',
+                                width: '100%',
+                                videoId: '<?= $youtubeLink[1]; ?>',
+                                events: {
+                                    'onStateChange': onPlayerStateChange
+                                }
+                            });
+                        }
+
+                        // 4. The API will call this function when the video player is ready.
+                        function onPlayerReady(event) {
+                            event.target.playVideo();
+                        }
+
+                        // 5. The API calls this function when the player's state changes.
+                        //    The function indicates that when playing a video (state=1),
+                        //    the player should play for six seconds and then stop.
+                        var done = false;
+
+                        function onPlayerStateChange(event) {
+                            if (event.data == YT.PlayerState.PLAYING && !done) {
+                                done = true;
+                            }
+                        }
+
+                        function playVideo() {
+                            player.playVideo();
+                        }
+
+                        function stopVideo() {
+                            player.stopVideo();
+                        }
+                    </script>
+                <?php endif; ?>
+            </div>
+        </div>
+
     </section>
 
     <section id="expertise" class="expertise">

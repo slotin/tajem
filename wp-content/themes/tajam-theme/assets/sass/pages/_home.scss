@@ -1,14 +1,14 @@
 .page-template-tpl_homepage {
 
   .hero-section {
-    height: 670px;
+    //height: 670px;
     background-position: 50% 50%;
-    -webkit-background-size: cover;
     background-size: cover;
     z-index: 1;
+    padding: 207px 0;
 
     @include max-w($screen-md) {
-      height: 100vh;
+      //height: 100vh;
     }
 
     &--slider {
@@ -23,7 +23,8 @@
 
       .title {
         letter-spacing: 0.32px;
-        font-family: 'Playfair Display Black';
+        font-family: $font-family-title;
+        font-weight: 700;
         position: relative;
         margin-bottom: 50px;
         margin-top: 10px;
@@ -57,7 +58,6 @@
         margin-left: auto;
         margin-right: auto;
         line-height: 1.7;
-        //margin-bottom: 55px;
       }
 
       .btn {
@@ -66,11 +66,13 @@
 
       .slick-dots {
         position: absolute;
-        top: auto;
-        bottom: 56px;
+        top: calc(100% + 105px);
+        //bottom: 56px;
         padding-left: 0;
         list-style: none;
         display: flex;
+        left: 50%;
+        transform: translateX(-50%);
 
         @include max-w($screen-sm) {
           bottom: 20px;
@@ -137,6 +139,7 @@
 
       @include max-w($screen-m) {
         flex-direction: column;
+        text-align: center;
       }
     }
 
@@ -152,7 +155,7 @@
         width: 235px;
 
         @include max-w($screen-m) {
-          width: 130px;
+          width: 120px;
         }
       }
     }
@@ -207,10 +210,17 @@
       font-weight: 700;
     }
 
+    button {
+      background: none;
+      outline: none;
+      border: none;
+    }
+
     i.fa {
       font-size: 40px;
       cursor: pointer;
       border: 3px solid $white;
+      color: $white;
       border-radius: 50%;
       width: 100px;
       height: 100px;
@@ -319,6 +329,11 @@
       border-right: 1px solid;
       border-bottom: 1px solid;
       border-color: #ebebeb;
+      overflow: hidden;
+
+      & > div {
+        width: 100%;
+      }
 
       @include min-w(569px) {
         &:nth-child(3n+3) {
@@ -362,7 +377,6 @@
     text-align: center;
     z-index: 1;
     background-position: 50% 50%;
-    -webkit-background-size: cover;
     background-size: cover;
 
     &--container {
@@ -568,7 +582,6 @@
     padding-bottom: 65px;
     z-index: 1;
     background-position: 50% 50%;
-    -webkit-background-size: cover;
     background-size: cover;
     color: $white;
     overflow: hidden;
@@ -652,6 +665,10 @@
       margin-right: auto;
       margin-left: auto;
 
+      @include max-w($screen-sm) {
+        width: 190px;
+      }
+
       &-item {
         height: 45px;
         width: 45px;
@@ -731,7 +748,8 @@
       }
 
       @include max-w($screen-md) {
-        flex-direction: column-reverse;
+        //flex-direction: column-reverse;
+        flex-direction: column;
       }
 
       h2 {
@@ -756,15 +774,11 @@
       }
     }
 
-    &--column  {
+    &--column {
       width: 100%;
 
       &_form {
         max-width: 460px;
-
-        @include max-w($screen-m) {
-          //max-width: 100%;
-        }
       }
 
       &_clients {
@@ -783,6 +797,10 @@
 
       @include max-w($screen-md) {
         column-count: 4;
+      }
+
+      @include max-w($screen-sm) {
+        column-count: 2;
       }
 
       img {

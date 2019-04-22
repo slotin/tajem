@@ -10,6 +10,7 @@
             z-index: 555;
             transition: 0.4s;
         }
+
         #loader {
             display: block;
             position: relative;
@@ -24,6 +25,7 @@
             animation: spin 1.7s linear infinite;
             z-index: 11;
         }
+
         #loader:before {
             content: "";
             position: absolute;
@@ -49,6 +51,7 @@
             border-top-color: #413d4b;
             animation: spin 1s linear infinite;
         }
+
         @-webkit-keyframes spin {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -57,6 +60,7 @@
                 -webkit-transform: rotate(360deg);
             }
         }
+
         @keyframes spin {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -67,6 +71,7 @@
                 transform: rotate(360deg);
             }
         }
+
         @-webkit-keyframes spin-reverse {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -75,6 +80,7 @@
                 -webkit-transform: rotate(-360deg);
             }
         }
+
         @keyframes spin-reverse {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -85,6 +91,7 @@
                 transform: rotate(-360deg);
             }
         }
+
         @-webkit-keyframes spin {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -93,6 +100,7 @@
                 -webkit-transform: rotate(360deg);
             }
         }
+
         @keyframes spin {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -103,6 +111,7 @@
                 transform: rotate(360deg);
             }
         }
+
         @-webkit-keyframes spin-reverse {
             0% {
                 -webkit-transform: rotate(0deg);
@@ -111,6 +120,7 @@
                 -webkit-transform: rotate(-360deg);
             }
         }
+
         @keyframes spin-reverse {
             0% {
                 -webkit-transform: rotate(0deg);
