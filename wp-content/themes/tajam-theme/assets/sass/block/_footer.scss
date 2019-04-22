@@ -25,6 +25,10 @@
 			margin-top: 36px;
 			justify-content: space-between;
 
+			@include max-w($screen-m) {
+				flex-direction: column;
+			}
+
 			.copyright {
 				letter-spacing: 0.35px;
 

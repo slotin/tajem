@@ -5,7 +5,6 @@
     // Cache selectors
     var lastId,
         topMenu = $(".main-nav"),
-        topMenuHeight = topMenu.outerHeight() + 15,
         // All list items
         menuItems = topMenu.find("a"),
         // Anchors corresponding to menu items
@@ -52,7 +51,7 @@
         $('.main-nav a').removeClass('active');
 
         // console.log(elementClick);
-        var destination = $(elementClick).offset().top - headerDiv.height();
+        var destination = $(elementClick).offset().top - headerDiv.outerHeight() + 1;
         if ($.browser.safari) {
             $('html, body').animate({scrollTop: destination}, 500);
         } else {
@@ -67,7 +66,7 @@
         // Get container scroll position
         var fromTop = $(this).scrollTop() + yourHeader;
 
-        var $offTop = 80;
+        var $offTop = 90;
         // Get id of current scroll item
         var cur = scrollItems.map(function () {
             if ($(this).offset().top < fromTop + $offTop)

@@ -7,8 +7,12 @@
     z-index: 1;
     padding: 207px 0;
 
-    @include max-w($screen-md) {
-      //height: 100vh;
+    @media screen and (max-width: $screen-md) and (orientation: portrait) {
+      height: 100vh;
+    }
+
+    @media screen and (max-width: $screen-tab) and (orientation: landscape) {
+      padding: 100px 0;
     }
 
     &--slider {
@@ -73,6 +77,13 @@
         display: flex;
         left: 50%;
         transform: translateX(-50%);
+
+        @media screen and (max-width: $screen-tab) and (orientation: landscape) {
+          top: 100%;
+        }
+        @include max-w($screen-md) {
+          //top: calc(100% - 60px);
+        }
 
         @include max-w($screen-sm) {
           bottom: 20px;
@@ -748,8 +759,8 @@
       }
 
       @include max-w($screen-md) {
-        //flex-direction: column-reverse;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        //flex-direction: column;
       }
 
       h2 {
