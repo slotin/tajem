@@ -19,6 +19,10 @@ body {
   font-size: $font-size;
   line-height: $line-height;
   position: relative;
+
+  &.open-menu {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -48,6 +52,10 @@ section {
   padding-left: $container-padding;
   padding-right: $container-padding;
   box-sizing: content-box;
+
+  @include max-w($screen-lg) {
+    max-width: 100%;
+  }
 }
 
 .icon {

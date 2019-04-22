@@ -14,7 +14,16 @@
             if (item.length) {
                 return item;
             }
-        });
+        }),
+        menuMobile = $('.js-burger'),
+        body = $('body');
+
+    // remove preloader when window is loaded
+    $(window).load(function() {
+        $('#preloader').remove();
+    });
+
+
     // sticky menu
     var yourNavigation = headerDiv,
         stickyDiv = "sticky bg-overlayed",
@@ -38,11 +47,9 @@
     }
 
     // smooth scroll to anchor links
-    $('body').on('click', '.main-nav a', function () {
+    body.on('click', '.main-nav a', function () {
         var elementClick = $(this).attr("href");
         $('.main-nav a').removeClass('active');
-        var self = $(this);
-        var thisID = elementClick;
 
         // console.log(elementClick);
         var destination = $(elementClick).offset().top - headerDiv.height();
@@ -84,7 +91,12 @@
         }
     });
 
-    $(".our-works--item:nth-child(n+13)").addClass('invisible');
+    if (window.innerWidth < 568) {
+        $(".our-works--item:nth-child(n+5)").addClass('invisible');
+    } else {
+        $(".our-works--item:nth-child(n+13)").addClass('invisible');
+    }
+
     $('a.load-more').on('click', function (e) {
         e.preventDefault();
         $(this).hide();
@@ -100,15 +112,43 @@
         asNavFor: '.testimonials--nav'
     });
     $('.testimonials--nav').slick({
-        slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: '.testimonials--texts',
         dots: false,
         centerMode: true,
         focusOnSelect: true,
         variableWidth: true,
+        mobileFirst:true,
         prevArrow: '<i class="nav-arrow fas fa-chevron-left"></i>',
         nextArrow: '<i class="nav-arrow fas fa-chevron-right"></i>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+        ]
+    });
+
+    menuMobile.on('click', function(){
+        toglerMenu();
+    });
+
+     function toglerMenu(){
+        $('.main-nav').toggleClass('open-menu');
+        $(this).toggleClass('open-menu');
+        body.toggleClass('open-menu');
+    }
+
+    body.on('click', '.main-nav.open-menu a', function () {
+        toglerMenu();
     });
 
 })(jQuery);

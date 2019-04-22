@@ -79,6 +79,14 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   font-size: 32px;
+
+  @include max-w($screen-sm) {
+    font-size: 26px;
+  }
+
+  @include max-w($screen-xs) {
+    font-size: 24px;
+  }
 }
 
 h2 {
@@ -86,6 +94,10 @@ h2 {
   letter-spacing: 1.1px;
   font-weight: 700;
   text-transform: uppercase;
+
+  @include max-w($screen-sm) {
+    font-size: 18px;
+  }
 }
 
 h3 {

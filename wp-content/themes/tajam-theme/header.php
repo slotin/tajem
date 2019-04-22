@@ -4,6 +4,8 @@
     <?php get_template_part('template-parts/head'); ?>
 </head>
 
+<?php get_template_part('template-parts/preloader'); ?>
+
 <body <?php body_class("page-body"); ?>>
 
 <header class="page-header">
@@ -23,6 +25,12 @@
                 'container' => false));
             ?>
         </nav>
+    </div>
+
+    <div class="js-burger burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
 </header>
