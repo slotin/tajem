@@ -152,7 +152,9 @@
         body.toggleClass('open-modal');
         playVideo();
     });
-    $('.overlay').on('click', function () {
+
+    // stop and close
+    $('.overlay, .js-close').on('click', function () {
         $('.popup').toggleClass('open-popup');
         body.toggleClass('open-modal');
         stopVideo();

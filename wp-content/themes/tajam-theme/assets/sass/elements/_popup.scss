@@ -33,6 +33,22 @@
     left: 50%;
     border-radius: 2px;
     transform: translate(-50%, -50%);
+
+    .js-close {
+      position: absolute;
+      top: -18px;
+      left: auto;
+      right: -18px;
+      color: $white;
+      z-index: 150;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
   }
 
   &.open-popup {

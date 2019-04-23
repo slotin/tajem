@@ -64,6 +64,7 @@
         <div class="popup">
             <div class="overlay"></div>
             <div class="video-container">
+                <span class="js-close far fa-times-circle"></span>
                 <div id="player"></div>
 
                 <?php if (get_field('youtube_link')):
